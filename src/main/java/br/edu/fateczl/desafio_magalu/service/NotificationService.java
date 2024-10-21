@@ -1,8 +1,11 @@
 package br.edu.fateczl.desafio_magalu.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import br.edu.fateczl.desafio_magalu.controller.dto.ScheduleNotificationDto;
+import br.edu.fateczl.desafio_magalu.entities.Notification;
 import br.edu.fateczl.desafio_magalu.repository.NotificationRepository;
 
 @Service
@@ -16,6 +19,10 @@ public class NotificationService {
 
     public void scheduleNotification(ScheduleNotificationDto dto) {
         notificationRepository.save(dto.toNotification());
+    }
+
+    public Optional<Notification> findById(Long notificationId) {
+        return notificationRepository.findById(notificationId);
     }
 
 }
