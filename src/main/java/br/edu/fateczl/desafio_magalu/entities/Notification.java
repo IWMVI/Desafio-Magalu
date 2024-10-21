@@ -1,6 +1,6 @@
 package br.edu.fateczl.desafio_magalu.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,11 +20,19 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Notification {
 
+    public Notification(LocalDate dateTime, String destination, String message, Channel channel, Status status) {
+        this.dateTime = dateTime;
+        this.destination = destination;
+        this.message = message;
+        this.channel = channel;
+        this.status = status;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long notificationId;
 
-    private LocalDateTime dateTime;
+    private LocalDate dateTime;
     private String destination;
     private String message;
 
