@@ -1,0 +1,11 @@
+services:
+  mysql:
+    container_name: 'desafio-magalu'
+    image: 'mysql:latest'
+    environment:
+      MYSQL_DATABASE: 'desafio_magalu'
+      MYSQL_PASSWORD: 'P4ssw0rd'
+      MYSQL_ROOT_PASSWORD: 'P4ssw0rd'
+      MYSQL_USER: 'Wallace'
+    ports:
+      - '3306:3306'
